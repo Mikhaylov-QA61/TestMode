@@ -34,32 +34,32 @@ public class SendTestDate {
         // TODO: добавить логику теста в рамках которого будет выполнена попытка входа в личный кабинет
         //  незарегистрированного пользователя, для заполнения полей формы используйте пользователя notRegisteredUser
     }
-//
-//    @Test
-//    @DisplayName("Should get error message if login with blocked registered user")
-//    void shouldGetErrorIfBlockedUser() {
-//        var blockedUser = getRegisteredUser("blocked");
-//        // TODO: добавить логику теста в рамках которого будет выполнена попытка входа в личный кабинет,
-//        //  заблокированного пользователя, для заполнения полей формы используйте пользователя blockedUser
-//    }
-//
-//    @Test
-//    @DisplayName("Should get error message if login with wrong login")
-//    void shouldGetErrorIfWrongLogin() {
-//        var registeredUser = getRegisteredUser("active");
-//        var wrongLogin = getRandomLogin();
-//        // TODO: добавить логику теста в рамках которого будет выполнена попытка входа в личный кабинет с неверным
-//        //  логином, для заполнения поля формы "Логин" используйте переменную wrongLogin,
-//        //  "Пароль" - пользователя registeredUser
-//    }
-//
-//    @Test
-//    @DisplayName("Should get error message if login with wrong password")
-//    void shouldGetErrorIfWrongPassword() {
-//        var registeredUser = getRegisteredUser("active");
-//        var wrongPassword = getRandomPassword();
-//        // TODO: добавить логику теста в рамках которого будет выполнена попытка входа в личный кабинет с неверным
-//        //  паролем, для заполнения поля формы "Логин" используйте пользователя registeredUser,
-//        //  "Пароль" - переменную wrongPassword
-//    }
+
+    @Test
+    @DisplayName("Should get error message if login with blocked registered user")
+    void shouldGetErrorIfBlockedUser() {
+        var blockedUser = DataGenerator.Registration.getRegisteredUser("blocked");
+        // TODO: добавить логику теста в рамках которого будет выполнена попытка входа в личный кабинет,
+        //  заблокированного пользователя, для заполнения полей формы используйте пользователя blockedUser
+    }
+
+    @Test
+    @DisplayName("Should get error message if login with wrong login")
+    void shouldGetErrorIfWrongLogin() {
+        var registeredUser = DataGenerator.Registration.getRegisteredUser("active");
+        var wrongLogin = DataGenerator.getRandomLogin();
+        // TODO: добавить логику теста в рамках которого будет выполнена попытка входа в личный кабинет с неверным
+        //  логином, для заполнения поля формы "Логин" используйте переменную wrongLogin,
+        //  "Пароль" - пользователя registeredUser
+    }
+
+    @Test
+    @DisplayName("Should get error message if login with wrong password")
+    void shouldGetErrorIfWrongPassword() {
+        var registeredUser = DataGenerator.Registration.getRegisteredUser("active");
+        var wrongPassword = DataGenerator.getRandomPassword();
+        // TODO: добавить логику теста в рамках которого будет выполнена попытка входа в личный кабинет с неверным
+        //  паролем, для заполнения поля формы "Логин" используйте пользователя registeredUser,
+        //  "Пароль" - переменную wrongPassword
+    }
 }

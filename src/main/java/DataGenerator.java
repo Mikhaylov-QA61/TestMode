@@ -29,9 +29,9 @@ public class DataGenerator {
         given()
                 .spec(requestSpec)
                 .body(user)
-                .when()
+        .when()
                 .post("/api/system/users")
-                .then()
+        .then()
                 .statusCode(200);
 
         // TODO: отправить запрос на указанный в требованиях path, передав в body запроса объект user
@@ -41,7 +41,7 @@ public class DataGenerator {
 
     public static String getRandomLogin() {
 
-        String login = String.valueOf(faker.name());
+        String login = String.valueOf(faker.name().firstName());
         return login;
     }
 
