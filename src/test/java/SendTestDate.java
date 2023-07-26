@@ -14,7 +14,6 @@ public class SendTestDate {
     @BeforeEach
     void setup() {
         open("http://localhost:9999");
-        DataGenerator data = new DataGenerator();
     }
 
     @Test
@@ -23,14 +22,18 @@ public class SendTestDate {
 
         var registeredUser = DataGenerator.Registration.getRegisteredUser("active");
 
+        // TODO: добавить логику теста, в рамках которого будет выполнена попытка входа в личный кабинет с учётными
+        //  данными зарегистрированного активного пользователя, для заполнения полей формы используйте
+        //  пользователя registeredUser
+
     }
-//    @Test
-//    @DisplayName("Should get error message if login with not registered user")
-//    void shouldGetErrorIfNotRegisteredUser() {
-//        var notRegisteredUser = getUser("active");
-//        // TODO: добавить логику теста в рамках которого будет выполнена попытка входа в личный кабинет
-//        //  незарегистрированного пользователя, для заполнения полей формы используйте пользователя notRegisteredUser
-//    }
+    @Test
+    @DisplayName("Should get error message if login with not registered user")
+    void shouldGetErrorIfNotRegisteredUser() {
+        var notRegisteredUser = DataGenerator.Registration.getUser("active");
+        // TODO: добавить логику теста в рамках которого будет выполнена попытка входа в личный кабинет
+        //  незарегистрированного пользователя, для заполнения полей формы используйте пользователя notRegisteredUser
+    }
 //
 //    @Test
 //    @DisplayName("Should get error message if login with blocked registered user")
