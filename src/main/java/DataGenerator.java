@@ -25,7 +25,7 @@ public class DataGenerator {
             .build();
 
 
-    private static void sendRequest(RegistrationDto user) {
+    static void sendRequest(RegistrationDto user) {
         given()
                 .spec(requestSpec)
                 .body(user)
