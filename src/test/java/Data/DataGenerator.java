@@ -1,3 +1,5 @@
+package Data;
+
 import com.github.javafaker.Faker;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
@@ -13,6 +15,7 @@ import io.restassured.http.ContentType;
 
 public class DataGenerator {
     static Faker faker = new Faker();
+
     private DataGenerator() {
     }
 
@@ -29,14 +32,10 @@ public class DataGenerator {
         given()
                 .spec(requestSpec)
                 .body(user)
-        .when()
+                .when()
                 .post("/api/system/users")
-        .then()
+                .then()
                 .statusCode(200);
-
-        // TODO: отправить запрос на указанный в требованиях path, передав в body запроса объект user
-        //  и не забудьте передать подготовленную спецификацию requestSpec.
-        //  Пример реализации метода показан в условии к задаче.
     }
 
     public static String getRandomLogin() {
@@ -58,8 +57,6 @@ public class DataGenerator {
         public static RegistrationDto getUser(String status) {
 
             RegistrationDto user = new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
-
-            // TODO: создать пользователя user используя методы getRandomLogin(), getRandomPassword() и параметр status
             return user;
         }
 
@@ -67,8 +64,6 @@ public class DataGenerator {
 
             RegistrationDto registeredUser = getUser(status);
             sendRequest(registeredUser);
-            // TODO: объявить переменную registeredUser и присвоить ей значение возвращённое getUser(status).
-            // Послать запрос на регистрацию пользователя с помощью вызова sendRequest(registeredUser)
 
             return registeredUser;
         }
